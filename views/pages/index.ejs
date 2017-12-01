@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Sampler 1.0</title>
+    <title>modern_luv</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="/scripts/main.js"></script>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
 
     <link rel="stylesheet" href="/stylesheets/simple-grid.css">
     <link rel="stylesheet" href="/stylesheets/main.css">
-  </head>
-  <body>
-    <div class="row">
+    <script src="/scripts/main.js"></script>
+</head>
 
-      </div>
-  </body>
+<body>
+  <div class="row">
+      <h1 class="center col-12" id="title">In fair Los Angeles, where we lay our scene, <br>
+        a pair of star crossed lovers do we meet...
+      </h1>
+  </div>
+
+    <div id='map' style='width:100%; height:800px; z-index: 1;'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoiem9laW5ncmFtIiwiYSI6ImNpamxsMTB6eTAwMTh3MW0zZnByMW43bW4ifQ.Hoe0CVtxK-vyjpmXBB2NJQ';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-v9',
+            zoom: 0 // starting zoom
+        });
+
+
+        setTimeout(function() {
+          map.flyTo({
+              center: [
+                  -118.2437,
+                  34.0522
+                ],
+              zoom: 9
+          });
+        }, 5000);
+
+
+
+    </script>
+
+
+</body>
+
 </html>
