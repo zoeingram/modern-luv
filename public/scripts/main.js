@@ -4,6 +4,11 @@
 $(document).ready(function() {
    $('#title').hide(0).delay(500).fadeIn(5000);
 
+   setTimeout(function() {
+     $('#title').hide('slow')
+   }
+ , 6000);
+
 
 
 });
