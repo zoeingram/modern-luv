@@ -683,13 +683,9 @@ map.on('load', function(e) {
         data: stores
     });
     stores.features.forEach(function(marker) {
-        // Create a div element for the marker
         var el = document.createElement('div');
-        // Add a class called 'marker' to each div
         el.className = 'marker';
-        // By default the image for your custom marker will be anchored
-        // by its center. Adjust the position accordingly
-        // Create the custom markers, set their position, and add to map
+
         new mapboxgl.Marker(el, {
                 offset: [0, -23]
             })
@@ -697,19 +693,12 @@ map.on('load', function(e) {
             .addTo(map);
 
         el.addEventListener('click', function(e) {
-            var activeItem = document.getElementsByClassName('active');
-            // 1. Fly to the point
             flyToStore(marker);
-            // 2. Close all other popups and display popup for clicked store
             createPopUp(marker);
-            // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-            e.stopPropagation();
-            if (activeItem[0]) {
-                activeItem[0].classList.remove('active');
-            }
-            var listing = document.getElementById('listing-' + i);
-            console.log(listing);
-            listing.classList.add('active');
+            // call speak function here
+            responsiveVoice.speak(marker.properties.title, "UK English Male");
+             responsiveVoice.speak(marker.properties.text, "UK English Male");
+
         });
     });
 
@@ -728,7 +717,7 @@ setTimeout(function() {
 function flyToStore(currentFeature) {
     map.flyTo({
         center: currentFeature.geometry.coordinates,
-        zoom: 15
+        zoom: 11
     });
 }
 
@@ -744,6 +733,6 @@ function createPopUp(currentFeature) {
         })
         .setLngLat(currentFeature.geometry.coordinates)
         .setHTML(
-            '<h4>' + currentFeature.properties.title + '</h4>')
+            '<h4>' + currentFeature.properties.title + '</h4>' + '<p>' + currentFeature.properties.text + '</p>')
         .addTo(map);
 }

@@ -16,3 +16,8 @@
   background-image: url('/images/marker.png');
   background-color: rgba(0, 0, 0, 0);
 }
+
+.mapboxgl-popup {
+  padding-bottom: 50px;
+  width: 50%;
+}
