@@ -49,3 +49,9 @@
   padding-top: 10%;
   box-shadow: none;
 }
+
+
+.mapboxgl-popup-close-button {
+  right: -100px;
+  background-color: pink;
+}

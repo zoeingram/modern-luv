@@ -722,7 +722,7 @@ setTimeout(function() {
 function flyToStore(currentFeature) {
     map.flyTo({
         center: currentFeature.geometry.coordinates,
-        zoom: 11
+        zoom: 9
     });
 }
 
