@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 
 #title {
   font-family: "La Belle Aurore";
   position: absolute;
-  color: red;
   z-index: 2;
-  top: 300px;
+  top: 175px;
+  background-image: url('/images/banner.jpg');
+  height: 500px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-top: 150px;
+  width: 100%;
 }
 
 .marker {
@@ -20,4 +26,26 @@
 .mapboxgl-popup {
   padding-bottom: 50px;
   width: 50%;
+  background-image: url('/images/scroll-main.jpeg');
+  height: 1000px;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.mapboxgl-popup h4 {
+  font-family: "La Belle Aurore";
+  font-size: 1.6rem;
+  padding-bottom: 0;
+}
+
+.mapboxgl-popup p {
+  font-family: "Crimson Text";
+}
+
+.mapboxgl-popup-content {
+  background: none;
+  width: 40%;
+  padding-left: 15%;
+  padding-top: 10%;
+  box-shadow: none;
 }

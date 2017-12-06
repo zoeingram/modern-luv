@@ -695,12 +695,17 @@ map.on('load', function(e) {
         el.addEventListener('click', function(e) {
             flyToStore(marker);
             createPopUp(marker);
+
             // call speak function here
             responsiveVoice.speak(marker.properties.title, "UK English Male");
-             responsiveVoice.speak(marker.properties.text, "UK English Male");
+            responsiveVoice.speak(marker.properties.text, "UK English Male");
+
 
         });
+
     });
+
+
 
 });
 
@@ -712,7 +717,7 @@ setTimeout(function() {
         ],
         zoom: 10
     });
-}, 5000);
+}, 8000);
 
 function flyToStore(currentFeature) {
     map.flyTo({
